@@ -1,0 +1,31 @@
+.Menu {
+  display: flex;
+  list-style: none;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.Menu-item {
+  font-size: 30px;
+  font-family: var(--second-font-family);
+  text-decoration: none;
+}
+
+.Menu-link {
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  cursor: pointer;
+}
+
+.Menu-link:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.Menu-link.active {
+  color: var(--primary);
+  font-weight: bold;
+}

@@ -1,0 +1,6 @@
+.PageLayout {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: inherit;
+  padding-inline: 20px;
+}

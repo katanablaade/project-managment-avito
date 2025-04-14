@@ -1,0 +1,98 @@
+/* Карточка задачи */
+.IssuesItem {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.IssuesItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.IssuesItem-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.IssuesItem-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.IssuesItem-priority {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-right: 10px;
+}
+
+.priority-low {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.priority-medium {
+  background-color: #fff7e6;
+  color: #fa8c16;
+}
+
+.priority-high {
+  background-color: #fff1f0;
+  color: #f5222d;
+}
+
+.IssuesItem-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.status-backlog {
+  background-color: #f0f0f0;
+  color: #8c8c8c;
+}
+
+.status-inprogress {
+  background-color: #e6f7ff;
+  color: #1890ff;
+}
+
+.status-done {
+  background-color: #f6ffed;
+  color: #52c41a;
+}
+
+.IssuesItem-assignee {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.IssuesItem-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.IssuesItem-assignee span {
+  font-size: 0.9rem;
+  color: #333;
+}

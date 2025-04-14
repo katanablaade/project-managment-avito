@@ -1,0 +1,28 @@
+.SideLayout {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding: 0;
+  gap: 16px;
+  align-items: center;
+}
+
+.SideLayout--side-start {
+  justify-content: flex-start;
+}
+
+.SideLayout--side-end {
+  justify-content: flex-end;
+}
+
+.SideLayout--side-between {
+  justify-content: space-between;
+}
+
+.SideLayout--padding-small {
+  padding-block: 8px;
+}
+
+.SideLayout--padding-medium {
+  padding-block: 24px;
+}

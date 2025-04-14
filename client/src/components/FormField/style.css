@@ -1,0 +1,66 @@
+.FormTask-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.FormTask-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--main-text);
+}
+
+.FormTask-input,
+.FormTask-textarea,
+.FormTask-select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid var(--divider);
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.FormTask-input:focus,
+.FormTask-textarea:focus,
+.FormTask-select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.FormTask-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.FormTask-button {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--background);
+  background-color: var(--primary);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.FormTask-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.FormTask-action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.FormTask-error {
+  color: var(--delete);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.FormTask-input-error,
+.FormTask-select-error {
+  border-color: var(--delete);
+}

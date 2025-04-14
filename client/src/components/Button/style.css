@@ -1,0 +1,10 @@
+.Button-primary {
+  background-color: var(--primary);
+  color: var(--second-text);
+
+  &:hover {
+    background-color: inherit;
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+}

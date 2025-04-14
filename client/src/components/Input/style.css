@@ -1,0 +1,19 @@
+.Input {
+  padding: 8px;
+  border: 1px solid var(--filter-border);
+  border-radius: 4px;
+  font-family: var(--font-family);
+  height: 40px;
+}
+
+.Input:focus {
+  outline: none;
+}
+
+.Input-theme-big {
+  width: 300px;
+}
+
+.Input-theme-small {
+  width: 233px;
+}

@@ -1,0 +1,38 @@
+/* Карточка доски */
+.BoardsItem {
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+  padding: 16px;
+  background-color: var(----background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.BoardsItem-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--main-text);
+  margin-bottom: 8px;
+}
+
+.BoardsItem-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.BoardsItem-taskCount {
+  font-size: 0.8rem;
+  color: #8c8c8c;
+  margin-bottom: 16px;
+}
+
+.BoardsItem-actions {
+  display: flex;
+  align-items: center;
+}
