@@ -3,6 +3,7 @@ import { createSelector } from 'reselect';
 import { RootState } from '../..';
 import { createTask, getTask, getTasks, updateTask } from '../../../service';
 import { FormTaskData, Issue } from '../../../types';
+import { getAsyncBoardTasks } from '../boards';
 
 export const getAsyncTasks = createAsyncThunk<Issue[]>(
   'issues/getAsyncTasks',
@@ -30,24 +31,55 @@ export const getAsyncTask = createAsyncThunk<Issue, number>(
 
 export const updateAsyncTask = createAsyncThunk<
   Issue,
-  { taskId: number; data: FormTaskData }
->('issues/updateAsyncTask', async ({ taskId, data }) => {
-  try {
-    await updateTask(taskId, data);
-    const updatedTaskResponse = await getTask(taskId);
-    return updatedTaskResponse;
-  } catch (error) {
-    throw error;
-  }
-});
+  { taskId: number; data: FormTaskData },
+  { dispatch: any; state: RootState }
+>(
+  'issues/updateAsyncTask',
+  async ({ taskId, data }, { dispatch, getState }) => {
+    try {
+      await updateTask(taskId, data);
+      const updatedTaskResponse = await getTask(taskId);
 
-export const createAsyncTask = createAsyncThunk<Issue, FormTaskData>(
+      const state = getState();
+      const boardId =
+        state.issues.boardOptions.find(
+          (option: { id: number; title: string }) =>
+            option.title === updatedTaskResponse.boardName
+        )?.id || null;
+
+      if (boardId) {
+        dispatch(getAsyncBoardTasks(boardId));
+      }
+
+      return updatedTaskResponse;
+    } catch (error) {
+      throw error;
+    }
+  }
+);
+
+export const createAsyncTask = createAsyncThunk<
+  Issue,
+  FormTaskData,
+  { dispatch: any; state: RootState }
+>(
   'issues/createAsyncTask',
-  async (data: FormTaskData) => {
+  async (data: FormTaskData, { dispatch, getState }) => {
     try {
       const response = await createTask(data);
       const newTaskId = response.id;
       const fullTaskResponse = await getTask(newTaskId);
+      const state = getState();
+      const boardId =
+        state.issues.boardOptions.find(
+          (option: { id: number; title: string }) =>
+            option.title === fullTaskResponse.boardName
+        )?.id || null;
+
+      if (boardId) {
+        dispatch(getAsyncBoardTasks(boardId));
+      }
+
       return fullTaskResponse;
     } catch (error) {
       throw error;
