@@ -48,5 +48,5 @@ docker run -d -p 8084:80 --name app my-react-app
 Приложение будет доступно по адресу: .
 
 ```sh
-http://localhost:8084(http://localhost:8084)
+http://localhost:8084
 ```
